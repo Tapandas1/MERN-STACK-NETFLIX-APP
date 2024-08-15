@@ -1,0 +1,504 @@
+{
+	"info": {
+		"_postman_id": "c30186bb-6f28-4227-a802-95feef99ab88",
+		"name": "Netflix App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27317904"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"rahul\",\r\n    \"email\":\"rah267@gmail.com\",\r\n    \"password\":\"rah267\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"tapan@gmail.com\",\r\n    \"password\":\"abc123\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/users/find/65e71f776937a12452ce672b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"find",
+								"65e71f776937a12452ce672b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZjdhNWZmZDE0YTRmY2RhZDFjNDUxOCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcxMDcyODczOSwiZXhwIjoxNzExMTYwNzM5fQ.nhjAybD021CDCwd6NCR3vYD3oN7eG6uVQ2HSTBz8zT0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/users/?new=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "new",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Data",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTc1NTZjZWFlZWM1OTg2ODQ2YTcyMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwOTY1OTU2NCwiZXhwIjoxNzEwMDkxNTY0fQ.AnSG_yccJmo7kBtG-1g87zHGU7ot6KfoqqTrB4aSFys",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"tanupdate\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/65e7556ceaeec5986846a721",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"65e7556ceaeec5986846a721"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user Data",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTc1NTZjZWFlZWM1OTg2ODQ2YTcyMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwOTY1OTU2NCwiZXhwIjoxNzEwMDkxNTY0fQ.AnSG_yccJmo7kBtG-1g87zHGU7ot6KfoqqTrB4aSFys",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/users/65e75297a11b7fb46bf6ac7c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"65e75297a11b7fb46bf6ac7c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/users/stats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"stats"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "Add Movie",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTc1NTZjZWFlZWM1OTg2ODQ2YTcyMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwOTY1OTU2NCwiZXhwIjoxNzEwMDkxNTY0fQ.AnSG_yccJmo7kBtG-1g87zHGU7ot6KfoqqTrB4aSFys",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Soorma7\",\r\n    \"desc\":\"test desc\",\r\n    \"img\":\"https://upload.wikimedia.org/wikipedia/en/f/f5/This_is_a_poster_for_Soorma.jpg\",\r\n    \"imgTitle\":\"https://upload.wikimedia.org/wikipedia/en/f/f5/This_is_a_poster_for_Soorma.jpg\",\r\n    \"imgSm\":\"https://upload.wikimedia.org/wikipedia/en/f/f5/This_is_a_poster_for_Soorma.jpg\",\r\n    \"trailer\":\"https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0fd273d2c6d9a064f3ae35579b2bbdf&profile_id=139&oauth2_token_id=57447761\",\r\n    \"video\":\"https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0fd273d2c6d9a064f3ae35579b2bbdf&profile_id=139&oauth2_token_id=57447761\",\r\n    \"year\":\"2019\",\r\n    \"limit\":16,\r\n    \"genre\":\"Comedy\",\r\n    \"isSeries\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Movie By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/movies/find/65e83198d4064dcefae951cb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"movies",
+								"find",
+								"65e83198d4064dcefae951cb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Random Movie",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZjdhNWZmZDE0YTRmY2RhZDFjNDUxOCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcxMDcyODczOSwiZXhwIjoxNzExMTYwNzM5fQ.nhjAybD021CDCwd6NCR3vYD3oN7eG6uVQ2HSTBz8zT0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/movies/random?type=series",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"movies",
+								"random"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "series"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Movies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZjdhNWZmZDE0YTRmY2RhZDFjNDUxOCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcxMDcyODczOSwiZXhwIjoxNzExMTYwNzM5fQ.nhjAybD021CDCwd6NCR3vYD3oN7eG6uVQ2HSTBz8zT0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/movies",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Movie Details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTc1NTZjZWFlZWM1OTg2ODQ2YTcyMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwOTY1OTU2NCwiZXhwIjoxNzEwMDkxNTY0fQ.AnSG_yccJmo7kBtG-1g87zHGU7ot6KfoqqTrB4aSFys",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"desc\":\"test\",\r\n    \"year\":\"2018\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/movies/65e83175d4064dcefae951c5",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"movies",
+								"65e83175d4064dcefae951c5"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Movie",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTc1NTZjZWFlZWM1OTg2ODQ2YTcyMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwOTY1OTU2NCwiZXhwIjoxNzEwMDkxNTY0fQ.AnSG_yccJmo7kBtG-1g87zHGU7ot6KfoqqTrB4aSFys",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/movies/65e83223d4064dcefae951cf",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"movies",
+								"65e83223d4064dcefae951cf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "List",
+			"item": [
+				{
+					"name": "Add List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTc1NTZjZWFlZWM1OTg2ODQ2YTcyMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwOTY1OTU2NCwiZXhwIjoxNzEwMDkxNTY0fQ.AnSG_yccJmo7kBtG-1g87zHGU7ot6KfoqqTrB4aSFys",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Best Horror movies\",\r\n    \"type\":\"movie\",\r\n    \"genre\":\"Horror\",\r\n    \"content\":[\"65e83198d4064dcefae951cb\",\"65e8318fd4064dcefae951c9\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/lists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"lists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete List",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTc1NTZjZWFlZWM1OTg2ODQ2YTcyMSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcwOTY1OTU2NCwiZXhwIjoxNzEwMDkxNTY0fQ.AnSG_yccJmo7kBtG-1g87zHGU7ot6KfoqqTrB4aSFys",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/lists/65e83673d4064dcefae951dd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"lists",
+								"65e83673d4064dcefae951dd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZjdhNWZmZDE0YTRmY2RhZDFjNDUxOCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcxMDcyODczOSwiZXhwIjoxNzExMTYwNzM5fQ.nhjAybD021CDCwd6NCR3vYD3oN7eG6uVQ2HSTBz8zT0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/lists?type=movie&genre=Horror",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"lists"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "movie"
+								},
+								{
+									"key": "genre",
+									"value": "Horror"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
